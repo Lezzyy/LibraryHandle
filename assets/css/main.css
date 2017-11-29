@@ -94,6 +94,43 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   /*header start*/
+     .jumbotron {
+       background-color: #FF8606;
+       color: white;
+     }
+
+     .header .btn-custom{
+       float:left;
+       background-color: #212121;
+       color: white;
+     }
+
+     .header .btn-custom:hover{
+       float:left;
+       background-color: #003D4E;
+       color:#FFAA00;
+     }
+
+     /*end header*/
+
+     /*footer start*/
+
+     footer {
+     margin-top: -100px;
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: #212121;
+     height: 60px;
+     line-height: 60px;
+     color: white;
+     text-align: center;
+     }
+
+     /*end footer*/
+
 
 
 

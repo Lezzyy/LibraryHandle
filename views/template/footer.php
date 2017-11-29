@@ -1,5 +1,5 @@
 <footer>
-  <p>A footer if you need one</p>
+  <p>Designed by LAU</p>
 </footer>
 
 </body>
