@@ -131,7 +131,33 @@ textarea {
 
      /*end footer*/
 
+    /*index start*/
 
+  .btn-custom {
+      background-color: #938F90;
+      color: white;
+      margin-right: 15px;
+      float:none;
+    }
+
+  .btn-custom:hover {
+      background: #FFAA00;
+      color: white;
+    }
+
+  .card{
+    margin-top: 20px;
+  }
+
+  .card .btn-custom{
+    background-color: #FF8606;
+    color: white;
+  }
+
+  .card .btn-custom:hover{
+    background-color: #938F90;
+    color: white;
+  }
 
 
 /* ##################################################################### */
