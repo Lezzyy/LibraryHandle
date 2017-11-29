@@ -10,6 +10,10 @@ class Book{
   protected $category;
   protected $status;
 
+  // declare constance for status
+  // const STATUS_AVAILABLE = "available";
+  // const STATUS_LENT = "lent";
+
   public function __construct($data){
     $this->hydrate($data);
   }
@@ -50,7 +54,7 @@ class Book{
       return $this->abstract;
     }
 
-    public function getReleaseDate(){
+    public function getReleasedate(){
       return $this->releaseDate;
     }
 
@@ -80,7 +84,7 @@ class Book{
       $this->abstract=$abstract;
     }
 
-    public function setReleaseDate($releaseDate){
+    public function setReleasedate($releaseDate){
       $this->releaseDate=$releaseDate;
     }
 
@@ -89,7 +93,13 @@ class Book{
     }
 
     public function setStatus($status){
-      $this->status=$status;
+      // if (in_array($status, [self::STATUS_AVAILABLE, self::STATUS_LENT]))
+      //
+      // {
+
+        $this->status = $status;
+
+      // }
     }
 
 
