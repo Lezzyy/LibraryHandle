@@ -94,8 +94,95 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   /*header start*/
+     .jumbotron {
+       background-color: #FF8606;
+       color: white;
+     }
+
+     .header .btn-custom{
+       float:left;
+       background-color: #212121;
+       color: white;
+     }
+
+     .header .btn-custom:hover{
+       float:left;
+       background-color: #003D4E;
+       color:#FFAA00;
+     }
+
+     /*end header*/
+
+     /*footer start*/
+
+     footer {
+     margin-top: -100px;
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: #212121;
+     height: 60px;
+     line-height: 60px;
+     color: white;
+     text-align: center;
+     }
+
+     /*end footer*/
+
+    /*index start*/
+
+  .btn-custom {
+      background-color: #938F90;
+      color: white;
+      margin-right: 15px;
+      float:none;
+    }
+
+  .btn-custom:hover {
+      background: #FFAA00;
+      color: white;
+    }
+
+  .card{
+    margin-top: 20px;
+  }
+
+  .card .btn-custom{
+    background-color: #FF8606;
+    color: white;
+  }
+
+  .card .btn-custom:hover{
+    background-color: #938F90;
+    color: white;
+  }
+
+/*new book*/
+
+#modifyForm input, textarea, select{
+text-align: center;
+width:300px;
+margin: 0 auto;
+margin-bottom: 10px;
+float: none;
+}
 
 
+#modifyForm .btn-custom{
+  text-align: center;
+  width:150px;
+  float: none;
+  font-weight: bolder;
+  background-color: #FF8606;
+}
+
+#modifyForm .btn-custom:hover{
+  background-color: #938F90;
+  font-weight:bolder;
+  color: white;
+}
 
 /* ##################################################################### */
 /* ##########################   SMARTPHONE   ########################### */
