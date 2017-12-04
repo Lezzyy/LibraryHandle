@@ -73,10 +73,20 @@ public function getCategory($category){
     return $book;
   }
 
+// request to join user Id in the two Tables
+
+function getUserId($getUserId){
+  include('db.php');
+    $reponse = $bdd->prepare('SELECT * FROM booksList b INNER JOIN usersList u ON u.idUser = b.userId and u.id = ?');
+    $reponse->execute(array($getTaskId));
+    return $reponse->fetchAll();
+}
+
+
 
 // request to update the category
 public function updateData($data){
-  $response=$this->db->prepare('UPDATE booksList SET status=:status, userNumber=:userNumber WHERE id=:id');
+  $response=$this->db->prepare('UPDATE booksList SET status=:status, userId=:userId WHERE id=:id');
   $response->bindValue(':status', $data->getStatus());
   $response->bindValue(':status', $data->getUsernumber());
   $response->bindValue(':id', $data->getId());
