@@ -9,7 +9,13 @@ if(isset($_GET['id'])){
 // we show the account selected
   $book = $manager->getOneBook($_GET['id']);
   require('../views/singleView.php');
-}else{
-// if not error message
-  echo 'no slection';
+}
+
+  if(isset($_POST['sendStatus'])){
+    if($_POST['sendStatus'] != 1){
+    echo 'ok';
+    }
+// }else{
+// // if not error message
+//   echo 'no slection';
 }

@@ -8,7 +8,7 @@
 
 
   <h2 class="text-center">List of books</h2>
-  <form class="" action="../controllers/index.php" method="post">
+  <form class="" action="../controllers/indexCat.php" method="post">
     <select name="sendCategory">
       <?php foreach (Book::category as $key => $value): ?>
         <option value="<?php echo $value ?>" name="cat"><?php echo $value ;?></option>

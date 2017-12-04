@@ -62,15 +62,15 @@ public function getOneBook($id){
 // request to select category
 
 public function getCategory($category){
-  $response=$this->db->query('SELECT * FROM booksList WHERE category=:category');
+  $response=$this->db->prepare('SELECT * FROM booksList WHERE category=:category');
   $response->execute(array(
     'category'=>$category
   ));
   $book=$response->fetchAll(PDO::FETCH_ASSOC);
   foreach ($book as $key => $value) {
   $book[$key]= new Book($value);
-  return $book;
     }
+    return $book;
   }
 
 }
