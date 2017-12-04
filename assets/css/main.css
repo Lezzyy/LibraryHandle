@@ -159,6 +159,30 @@ textarea {
     color: white;
   }
 
+/*new book*/
+
+#modifyForm input, textarea, select{
+text-align: center;
+width:300px;
+margin: 0 auto;
+margin-bottom: 10px;
+float: none;
+}
+
+
+#modifyForm .btn-custom{
+  text-align: center;
+  width:150px;
+  float: none;
+  font-weight: bolder;
+  background-color: #FF8606;
+}
+
+#modifyForm .btn-custom:hover{
+  background-color: #938F90;
+  font-weight:bolder;
+  color: white;
+}
 
 /* ##################################################################### */
 /* ##########################   SMARTPHONE   ########################### */

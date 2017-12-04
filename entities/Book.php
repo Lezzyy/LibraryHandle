@@ -10,6 +10,8 @@ class Book{
   protected $category;
   protected $status;
 
+  const category =['roman', 'adventure', 'thriller', 'science fiction'];
+  const status = ['available', 'lent'];
   // declare constance for status
   // const STATUS_AVAILABLE = "available";
   // const STATUS_LENT = "lent";

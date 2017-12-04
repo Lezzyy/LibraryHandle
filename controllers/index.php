@@ -5,9 +5,14 @@ require('../entities/Book.php');
 
 $manager=new BookManager($bdd);
 
+
+// if (isset($_POST)) {
+//   $manager->getCategory($_POST['category']);
+// }
+
 // we use the request to see all the accounts
 $books = $manager->getAllBooks();
 
 
-include "../views/indexVue.php";
+include "../views/indexView.php";
  ?>
