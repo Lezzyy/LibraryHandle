@@ -73,6 +73,15 @@ public function getCategory($category){
     return $book;
   }
 
+
+// request to update the category
+public function updateData($data){
+  $response=$this->db->prepare('UPDATE booksList SET status=:status, userNumber=:userNumber WHERE id=:id');
+  $response->bindValue(':status', $data->getStatus());
+  $response->bindValue(':status', $data->getUsernumber());
+  $response->bindValue(':id', $data->getId());
+  $response->execute();
+}
 }
 
 

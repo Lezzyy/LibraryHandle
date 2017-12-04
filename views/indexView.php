@@ -1,23 +1,24 @@
 <?php
-  include("template/header.php")
+  include("template/header.php");
  ?>
 
 <div class="container">
   <a href="../controllers/newBook.php" class="btn btn-custom">Add book</a>
-  <a href="#" class="btn btn-custom">List of users</a>
+  <a href="../controllers/usersList.php" class="btn btn-custom">List of users</a>
 
 
   <h2 class="text-center">List of books</h2>
   <form class="" action="../controllers/indexCat.php" method="post">
     <select name="sendCategory">
+      <option selected disabled="">Choose a category</option>
       <?php foreach (Book::category as $key => $value): ?>
-        <option value="<?php echo $value ?>" name="cat"><?php echo $value ;?></option>
+        <option value="<?php echo $value ?>"><?php echo $value ;?></option>
       <?php endforeach; ?>
     </select>
     <input type="submit" name="classify" value="classify">
   </form>
 
-
+<div class="row">
     <?php
     foreach ($books as $book)
     {
@@ -28,7 +29,7 @@
         <h4 class="card-title">Title : <?php echo $book->getTitle(); ?></h4>
         <p class="card-text">Author : <?php echo $book->getAuthor(); ?></p>
         <p class="card-text">Release Date : <?php echo $book->getReleasedate(); ?></p>
-        <p class="card-text" name='status'>Status :
+        <p class="card-text" name='status'>Status : 
             <?php
           if($book->getStatus() == 1){
             echo "available";
@@ -48,7 +49,7 @@
 }
    ?>
 </div>
-
+</div>
  <?php
   //  include("template/footer.php")
   ?>

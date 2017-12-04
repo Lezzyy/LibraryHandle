@@ -6,11 +6,10 @@
   <div class="container">
     <div class="form-group" id="modifyForm">
     <h2 class="text-center">Add a book</h2><br>
-      <form class="d-flex flex-column justify-content-center" action="" method="post">
+      <form class="d-flex flex-column justify-content-center" action="../controllers/newBook.php" method="post">
         <input type="text" name='title' class="form-control" value="" placeholder="Title"><br>
         <input type="text" name='author' class="form-control" value="" placeholder="Author"><br>
         <textarea name="abstract" rows="5" cols="10"></textarea>
-        <!-- <input type="text" name='abstract' class="form-control" value="" placeholder="Abstract"><br> -->
         <input type="text" name='releaseDate' class="form-control" value="" placeholder="Published year"><br>
         <select name="sendCategory">
           <?php foreach (Book::category as $key => $value): ?>

@@ -15,7 +15,7 @@
     <header>
       <div class="header jumbotron">
           <a href="../controllers/index.php" class="btn btn-custom">HOME</a>
-          <h1 class="text-center">Libary handle</h1>
+          <h1 class="text-center">Library handle</h1>
       </div>
 
     </header>

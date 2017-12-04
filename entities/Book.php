@@ -10,11 +10,12 @@ class Book{
   protected $category;
   protected $status;
 
+// declare constance for category
   const category =['roman', 'adventure', 'thriller', 'science fiction'];
+
+// declare constance for status
   const status = ['available', 'lent'];
-  // declare constance for status
-  // const STATUS_AVAILABLE = "available";
-  // const STATUS_LENT = "lent";
+
 
   public function __construct($data){
     $this->hydrate($data);
@@ -93,19 +94,9 @@ class Book{
     public function setCategory($category){
       $this->category=$category;
     }
-
-    public function setStatus($status){
-      // if (in_array($status, [self::STATUS_AVAILABLE, self::STATUS_LENT]))
-      //
-      // {
-
-        $this->status = $status;
-
-      // }
+    public function setStatus(int $status){
+      return $this->status=$status;
     }
-
-
-
 }
 
  ?>
