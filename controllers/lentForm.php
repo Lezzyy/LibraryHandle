@@ -6,7 +6,7 @@ require('../entities/Book.php');
 // we decare a new book manager
 $manager = new BookManager($bdd);
 
-var_dump($_POST['lent']);
+
 // we check if the $_GET is set
 if(isset($_POST['id'])){
 // we show the account selected

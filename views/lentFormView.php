@@ -11,6 +11,7 @@
        <form class="d-flex flex-column justify-content-center" action="../controllers/newBook.php" method="post">
          <input type="text" name='userNumber' class="form-control" value="" placeholder="User number"><br>
          <input type="hidden" name='id' class="form-control" value="<?php $book->getId(); ?>"><br>
+         <input type="hidden" name="lent" value="0">
          <input type='submit' name='register' value='Register' class="btn btn-custom">
        </form>
      </div>

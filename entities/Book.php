@@ -9,6 +9,7 @@ class Book{
   protected $releaseDate;
   protected $category;
   protected $status;
+  protected $userId;
 
 // declare constance for category
   const category =['roman', 'adventure', 'thriller', 'science fiction'];
@@ -69,6 +70,10 @@ class Book{
       return $this->status;
     }
 
+    public function getUserId(){
+      return $this ->userId;
+    }
+
     // setters
 
     public function setId(int $id){
@@ -95,7 +100,10 @@ class Book{
       $this->category=$category;
     }
     public function setStatus(int $status){
-      return $this->status=$status;
+    $this->status=$status;
+    }
+    public function setUserid($userId){
+    $this ->userId = $userId;
     }
 }
 
