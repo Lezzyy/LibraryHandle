@@ -2,7 +2,7 @@
   include("template/header.php");
  ?>
 
-<div class="container">
+<div class="container list">
   <a href="../controllers/newBook.php" class="btn btn-custom">Add book</a>
   <a href="../controllers/usersList.php" class="btn btn-custom">List of users</a>
 

@@ -22,7 +22,7 @@
      } ?>
    </p>
      <h4>Modify status</h4>
-         <form class="" action="../controllers/single.php" method="post" id="modifyForm">
+         <form class="" action="../controllers/available.php" method="post" id="modifyForm">
            <input type="hidden" name="id" value="<?php echo $book->getId();?>">
            <input type="hidden" name="available" value="1">
            <input class="btn btn-custom" type="submit" name="" value="Available">
@@ -38,6 +38,31 @@
      <div class="card-footer text-muted">
 
 
+
+
+       <!-- Trigger the modal with a button -->
+       <!-- <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#myModal">Available</button> -->
+
+       <!-- Modal -->
+       <!-- <div id="myModal" class="modal fade" role="dialog">
+         <div class="modal-dialog"> -->
+
+           <!-- Modal content-->
+           <!-- <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title"></h4>
+             </div>
+             <div class="modal-body">
+               <p>Some text in the modal.</p>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+             </div>
+           </div> -->
+
+         <!-- </div>
+       </div> -->
 
      </div>
    </div>

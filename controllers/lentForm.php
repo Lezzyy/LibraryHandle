@@ -17,11 +17,13 @@ if(isset($_POST['id'])){
 
 // if the previous status is equal to the new, we show a warn message
   if($previousStatus == $_POST['lent']){
-  $warn = 'The book is already lent';
+  $warn = 'This book is already lent';
 
 // if the previous status is different to the new, we show an ok message
 } if ($previousStatus !=  $_POST['lent']){
-  $warn = 'The book is available to be lent';
+  $warn = 'This book is available to be lent';
+  $userId= $book->getUserId();
+  var_dump($userId);
 }
 
   if (isset($_POST['userNumber'])){

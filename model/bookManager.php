@@ -76,7 +76,7 @@ public function getCategory($category){
 
 // request to join user Id in the two Tables
 
-function getUserId($getUserId){
+function getUserid($getUserId){
   include('db.php');
     $reponse = $bdd->prepare('SELECT * FROM booksList b INNER JOIN usersList u ON u.idUser = b.userId and u.id = ?');
     $reponse->execute(array($getUserId));

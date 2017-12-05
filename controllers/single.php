@@ -6,17 +6,16 @@ require('../entities/Book.php');
 // we decare a new book manager
 $manager = new BookManager($bdd);
 
+
+
 // we check if the $_GET is set
 if(isset($_GET['id'])){
 // we show the account selected
   $book = $manager->getOneBook($_GET['id']);
-  $previousStatus=$book ->getStatus();
-  var_dump($previousStatus);
+  // $previousStatus=$book ->getStatus();
+
   require('../views/singleView.php');
 
- if (isset($_POST['available']) && $previousStatus == 0){
-     echo 'previous status is already ';
-  }
   }
   // $previousStatus = $manager->getStatus();
 // }
