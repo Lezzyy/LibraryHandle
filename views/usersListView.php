@@ -4,6 +4,7 @@ include("template/header.php");
 
 <main>
 <div class="container">
+  <a href="../controllers/index.php" class="btn btn-custom">Return</a>
   <h2 class="text-center">Users list</h2>
  <div class="row">
      <?php

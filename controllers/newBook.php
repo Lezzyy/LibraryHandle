@@ -11,16 +11,11 @@ $manager = new BookManager($bdd);
 if(isset($_POST['title']) && isset($_POST['author']) && isset($_POST['abstract']) && isset($_POST['releaseDate']) && isset($_POST['category']) && isset($_POST['status'])){
 
 // we securise all the data from the $_POST
-  $newData = [
-    'title' => strtolower(htmlspecialchars($_POST['title'])),
-    'author' => strtolower(htmlspecialchars($_POST['author'])),
-    'abstract' => strtolower(htmlspecialchars($_POST['abstract'])), 'releaseDate' => strtolower(htmlspecialchars($_POST['releaseDate'])), 'category' => strtolower(htmlspecialchars($_POST['category'])),
-    'status' => strtolower(htmlspecialchars($_POST['status'])),
-    'userId' => strtolower(htmlspecialchars($_POST['status']))
+  $newData = [strtolower(htmlspecialchars($_POST['title'])), strtolower(htmlspecialchars($_POST['author'])), strtolower(htmlspecialchars($_POST['abstract'])), strtolower(htmlspecialchars($_POST['releaseDate'])), strtolower(htmlspecialchars($_POST['category'])), strtolower(htmlspecialchars($_POST['status']))
   ];
   var_dump($newData);
 
-// $POST = htmlspecialchars($_POST['title']);
+// $POST = htmlspecialchars($_POST[);
 // $input=strtolower($POST);
 
 // we creat a new object books which take in argument all the securised data
@@ -31,6 +26,8 @@ var_dump($newBook);
 // we use the function to add a book in bdd
 $manager -> addBook($newBook);
 header('Location: ../views/indexView.php');
+} else {
+  $error= 'Please complete form';
 }
 include("../views/newBookView.php");
 
