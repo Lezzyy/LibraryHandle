@@ -76,11 +76,12 @@ public function getCategory($category){
 
 // request to join user Id in the two Tables
 
-function getUserid($getUserId){
-  include('db.php');
-    $reponse = $bdd->prepare('SELECT * FROM booksList b INNER JOIN usersList u ON u.idUser = b.userId and u.id = ?');
+function findUserid($getUserId){
+    $reponse = $this->db->prepare('SELECT * FROM booksList b INNER JOIN usersList u ON u.idUser = b.userId and u.idUser = ?');
     $reponse->execute(array($getUserId));
-    return $reponse->fetchAll();
+    $userId=$response->fetch(PDO::FETCH_ASSOC);
+    $userId = new Book($userId);
+    return $userId;
 }
 
 

@@ -7,6 +7,8 @@ require('../entities/Book.php');
 $manager = new BookManager($bdd);
 
 
+var_dump($_POST['available']);
+
 if(isset($_POST['available'])){
   // we show the account selected
     $book = $manager->getOneBook($_POST['id']);
@@ -23,6 +25,7 @@ if(isset($_POST['available'])){
     if($_POST['available'] != $previousStatus){
       echo 'This book is available now';
       $userId= $book->getUserId();
+      $manager->findUserid($userId);
       var_dump($userId);
     }
 

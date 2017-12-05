@@ -6,6 +6,8 @@
    <a href="../controllers/index.php" class="btn btn-custom">Return</a>
    <div class="card text-center">
      <div class="card-header">
+       <p class="card-text">stat : <?php echo $book->getStatus(); ?></p>
+
        <h2><?php echo $book->getTitle(); ?></h2>
      </div>
      <div class="card-block">
