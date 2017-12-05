@@ -13,6 +13,7 @@
      <input type="submit" name="classify" value="classify" class="btn btn-custom">
    </form>
 
+  <div class="row">
  <?php
  foreach ($books as $book)
  {
