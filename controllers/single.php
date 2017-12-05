@@ -10,8 +10,16 @@ $manager = new BookManager($bdd);
 if(isset($_GET['id'])){
 // we show the account selected
   $book = $manager->getOneBook($_GET['id']);
+  $previousStatus=$book ->getStatus();
+  var_dump($previousStatus);
   require('../views/singleView.php');
-}
+
+ if (isset($_POST['available']) && $previousStatus == 0){
+     echo 'previous status is already ';
+  }
+  }
+  // $previousStatus = $manager->getStatus();
+// }
 
 // if the form is complete and have a value different of 1 (which is different from available), a new form appears.
 //   if(isset($_POST['lent'])){

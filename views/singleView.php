@@ -3,6 +3,7 @@
  ?>
 
  <div class="container">
+   <a href="../controllers/index.php" class="btn btn-custom">Return</a>
    <div class="card text-center">
      <div class="card-header">
        <h2><?php echo $book->getTitle(); ?></h2>

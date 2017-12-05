@@ -49,13 +49,14 @@ public function getOneBook($id){
   // request to add a book
 
   public function addBook($book){
-    $response=$this->db->prepare('INSERT INTO booksList(title, author, abstract, releaseDate, category, status) VALUES(:title, :author, :abstract, :releaseDate, :category, :status)');
+    $response=$this->db->prepare('INSERT INTO booksList(title, author, abstract, releaseDate, category, status, userId) VALUES(:title, :author, :abstract, :releaseDate, :category, :status, :userId)');
     $response->bindValue(':title', $book->getTitle(), PDO::PARAM_STR);
     $response->bindValue(':author', $book->getAuthor(), PDO::PARAM_STR);
     $response->bindValue(':abstract', $book->getAbstract(), PDO::PARAM_STR);
     $response->bindValue(':releaseDate', $book->getReleasedate());
-    $response->bindValue(':category', $book->getCategory(), PDO::PARAM_STR);
+    $response->bindValue(':category', $book->getCategory());
     $response->bindValue(':status', $book->getStatus(), PDO::PARAM_STR);
+    $response->bindValue(':userId', $book->getUserId());
     $response->execute();
   }
 
@@ -78,20 +79,22 @@ public function getCategory($category){
 function getUserId($getUserId){
   include('db.php');
     $reponse = $bdd->prepare('SELECT * FROM booksList b INNER JOIN usersList u ON u.idUser = b.userId and u.id = ?');
-    $reponse->execute(array($getTaskId));
+    $reponse->execute(array($getUserId));
     return $reponse->fetchAll();
 }
 
 
 
-// request to update the category
-public function updateData($data){
+// request to update the status and user id when the status is modify
+public function updateStatus($status){
   $response=$this->db->prepare('UPDATE booksList SET status=:status, userId=:userId WHERE id=:id');
-  $response->bindValue(':status', $data->getStatus());
-  $response->bindValue(':status', $data->getUsernumber());
-  $response->bindValue(':id', $data->getId());
+  $response->bindValue(':status', $status->getStatus());
+  $response->bindValue(':userId', $status->getUserId());
+  $response->bindValue(':id', $status->getId());
   $response->execute();
 }
+
+
 }
 
 

@@ -15,7 +15,7 @@
         <option value="<?php echo $value ?>"><?php echo $value ;?></option>
       <?php endforeach; ?>
     </select>
-    <input type="submit" name="classify" value="classify">
+    <input type="submit" name="classify" value="classify" class="btn btn-custom">
   </form>
 
 <div class="row">
@@ -29,7 +29,7 @@
         <h4 class="card-title">Title : <?php echo $book->getTitle(); ?></h4>
         <p class="card-text">Author : <?php echo $book->getAuthor(); ?></p>
         <p class="card-text">Release Date : <?php echo $book->getReleasedate(); ?></p>
-        <p class="card-text" name='status'>Status : 
+        <p class="card-text" name='status'>Status :
             <?php
           if($book->getStatus() == 1){
             echo "available";

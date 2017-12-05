@@ -2,13 +2,15 @@
   include("template/header.php")
  ?>
  <div class="container">
+   <a href="../controllers/index.php" class="btn btn-custom">Return</a>
+   <h2 class="text-center">Classify by category</h2>
    <form class="" action="../controllers/indexCat.php" method="post">
      <select name="sendCategory">
        <?php foreach (Book::category as $key => $value): ?>
          <option value="<?php echo $value ?>" name="cat"><?php echo $value ;?></option>
        <?php endforeach; ?>
      </select>
-     <input type="submit" name="classify" value="classify">
+     <input type="submit" name="classify" value="classify" class="btn btn-custom">
    </form>
 
  <?php

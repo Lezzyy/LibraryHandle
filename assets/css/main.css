@@ -147,6 +147,7 @@ textarea {
 
   .card{
     margin-top: 20px;
+    margin-right: 60px;
   }
 
   .card .btn-custom{
@@ -159,7 +160,7 @@ textarea {
     color: white;
   }
 
-/*new book*/
+/*new book start*/
 
 #modifyForm input, textarea, select{
 text-align: center;
@@ -182,6 +183,14 @@ float: none;
   background-color: #938F90;
   font-weight:bolder;
   color: white;
+}
+
+/*end new book*/
+
+/*lent form start*/
+
+.warn {
+  color: #FF8606;
 }
 
 /* ##################################################################### */
