@@ -11,5 +11,6 @@ $manager=new BookManager($bdd);
 $books = $manager->getAllBooks();
 
 
+
 include "../views/indexView.php";
  ?>

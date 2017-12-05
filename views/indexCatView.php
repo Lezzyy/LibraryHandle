@@ -1,9 +1,9 @@
 <?php
   include("template/header.php")
  ?>
- <div class="container">
+ <div class="container cat">
    <a href="../controllers/index.php" class="btn btn-custom">Return</a>
-   <h2 class="text-center">Classify by category</h2>
+   <h2 class="text-center"><?php echo $message; ?></h2>
    <form class="" action="../controllers/indexCat.php" method="post">
      <select name="sendCategory">
        <?php foreach (Book::category as $key => $value): ?>

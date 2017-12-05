@@ -160,6 +160,18 @@ textarea {
     color: white;
   }
 
+  .list h2{
+    margin-bottom: 20px;
+  }
+
+/*end index*/
+
+/*index cat start*/
+.cat h2{
+  color: #FF8606;
+  margin-bottom: 20px;
+}
+
 /*new book start*/
 
 #modifyForm input, textarea, select{
