@@ -47,7 +47,7 @@ $userManager = new UserManager($bdd);
 // we update the book with the new status and the new user id
   $update = $manager->updateStatus($book);
 
-// include('single.php');
+
 header("Location: single.php?id=".$book->getId()."");
 
 }
