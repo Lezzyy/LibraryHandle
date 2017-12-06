@@ -13,14 +13,12 @@
        <p class="card-text"><?php echo $book->getAbstract(); ?></p>
        <p class="card-text">Published in : <?php echo $book->getReleasedate(); ?></p>
        <p class="card-text">Category : <?php echo $book->getCategory(); ?></p>
-       <p class="card-text">Status :
          <?php
      if($book->getStatus() == 1){
-       echo "Available";
+       echo "<p class='card-text available'>Statut : Available</p>";
      } else {
-       echo "lent";
+       echo "<p class='card-text lent'>Statut : Lent</p>";
      } ?>
-   </p>
      <h4>Modify status</h4>
          <form class="" action="" method="post" id="modifyForm">
            <input type="hidden" name="id" value="<?php echo $book->getId(); ?>">
