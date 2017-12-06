@@ -13,22 +13,62 @@ if(isset($_GET['id'])){
 // we show the account selected
   $book = $manager->getOneBook($_GET['id']);
   // $previousStatus=$book ->getStatus();
+}
+if(isset($_POST['available'])){
+  // we show the account selected
+    $book = $manager->getOneBook($_POST['id']);
 
-  require('../views/singleView.php');
+  // we get the previous status
+    $previousStatus = $book->getStatus();
 
-  }
-  // $previousStatus = $manager->getStatus();
-// }
+  // if the previous status is equal to the new, warning message
+    if($_POST['available'] == $previousStatus){
+      $message = 'This book is already available';
+    }
 
-// if the form is complete and have a value different of 1 (which is different from available), a new form appears.
-//   if(isset($_POST['lent'])){
-//     if($_POST['lent'] != 1){
-//       header('Location : lentForm.php');
+    // if the previous status is different to the new, message ok
+    if($_POST['available'] != $previousStatus){
+      echo 'This book is available now';
+      // when the book is avalable, the user id is NULL
+      $userId= NULL;
+
+      // we set the new user id
+      $book->setUserid($userId);
+
+      // we set the new status (when the book is available, the status is equal to 1)
+      $book->setStatus(1);
+    
+      // we update the book with the new status and the new user id
+        $update = $manager->updateStatus($book);
+    }
+
+
+}
+
 //
-//     }
-// }
+// if(isset($_POST['id'])){
+//   var_dump($_POST['id']);
+    // we show the account selected
+    //   $book = $manager->getOneBook($_POST['id']);
+    //
+    // we get the previous status
+    //   $previousStatus = $book->getStatus();
+    //
+    // if the previous status is equal to the new, warning message
+    //   if($_POST['available'] == $previousStatus){
+    //     $message = 'This book is already available';
+    //   }
+    //
+    //   if the previous status is different to the new, message ok
+    //   if($_POST['available'] != $previousStatus){
+    //     echo 'This book is available now';
+    //     $userId= $book->getUserId();
+    //     $manager->findUserid($userId);
+    //     var_dump($userId);
+    //   }
+  //   }
+  //
+  // /
 
 
-// }else{
-// // if not error message
-//   echo 'no slection';
+  include('../views/singleView.php');
