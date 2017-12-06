@@ -13,7 +13,7 @@
         <input type="text" name='title' class="form-control" value="" placeholder="Title"><br>
         <input type="text" name='author' class="form-control" value="" placeholder="Author"><br>
         <textarea name="abstract" rows="5" cols="10"></textarea>
-        <input type="text" name='releaseDate' class="form-control" value="" placeholder="Published year"><br>
+        <input type="text" name='releaseDate' class="form-control" value="" placeholder="Published year (ex : 2017)"><br>
 
         <select name="category">
           <?php foreach (Book::category as $key => $value): ?>
