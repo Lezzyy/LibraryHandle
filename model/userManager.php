@@ -43,6 +43,18 @@ public function getUserNumber($userNumber){
   return $user;
 }
 
+// request to get user id
+
+public function getUserId($idUser){
+  $response=$this->db->prepare('SELECT * FROM usersList WHERE idUser=:idUser');
+  $response->execute(array(
+    'idUser'=> $idUser
+  ));
+  $user=$response->fetch(PDO::FETCH_ASSOC);
+  $user= new User($user);
+  return $user;
+}
+
 }
 
  ?>

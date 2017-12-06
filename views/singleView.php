@@ -19,7 +19,7 @@
      } else {
        echo "<p class='card-text lent'>Statut : Lent</p>";
      } ?>
-     <h4>Modify status</h4>
+     <h4 class="message"><?php echo $message ?></h4>
          <form class="" action="" method="post" id="modifyForm">
            <input type="hidden" name="id" value="<?php echo $book->getId(); ?>">
            <input type="hidden" name="available" value="1">
