@@ -2,7 +2,7 @@
   include("template/header.php")
  ?>
 
- <div class="container">
+ <div class="container single">
    <a href="../controllers/index.php" class="btn btn-custom">Return</a>
    <div class="card text-center">
      <div class="card-header">

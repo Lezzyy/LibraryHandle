@@ -4,12 +4,12 @@
  ?>
 
  <main>
-   <div class="container">
+   <div class="container lentForm">
      <h2 class="text-center warn"><?php echo $warn; ?></h2>
      <h2 class="text-center">Book to loan : <?php echo $book->getTitle(); ?> </h2>
      <p class=text-center>by <?php echo $book->getAuthor() ; ?> </p>
      <div class="form-group" id="modifyForm">
-     <h3 class="text-center">User data</h3><br>
+     <h3 class="text-center">User number :</h3>
        <form class="d-flex flex-column justify-content-center" action="../controllers/lentForm.php" method="post">
          <input type="text" name='userNumber' class="form-control" value="" placeholder="User number"><br>
          <input type="hidden" name='id' class="form-control" value="<?php echo $book->getId(); ?>"><br>

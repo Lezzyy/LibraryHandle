@@ -24,14 +24,12 @@
        <h4 class="card-title">Title : <?php echo $book->getTitle(); ?></h4>
        <p class="card-text">Author : <?php echo $book->getAuthor(); ?></p>
        <p class="card-text">Release Date : <?php echo $book->getReleasedate(); ?></p>
-       <p class="card-text" name='status'>Status :
-           <?php
-         if($book->getStatus() == 1){
-           echo "available";
-         } else {
-           echo "lent";
-         }
-         ?>
+       <?php
+       if($book->getStatus() == 1){
+         echo "<p class='card-text available'>Statut : Available</p>";
+       } else {
+         echo "<p class='card-text lent'>Statut : Lent</p>";
+       } ?>
        </p>
        <p class="card-text" name="category">Category : <?php echo $book->getCategory(); ?></p>
        <?php
