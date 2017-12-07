@@ -10,29 +10,44 @@ require('../entities/User.php');
 $manager = new BookManager($bdd);
 
 
-// $message='Modify status :';
-
 // we check if the $_GET is set
 if(isset($_GET['id'])){
-// we show the account selected
+
+// we show the book selected
   $book = $manager->getOneBook($_GET['id']);
+
+// we get the book's status
   $status = $book->getStatus();
+
+  // if the status is available (equal to 1), we show a message
  if($status == 1){
    $message = 'Modify status';
  }
- else{
+
+ // if the status is lent (equal to 0), we show a message and get the user name and surname
+
+ else {
+// we create a new user manager
   $userManager = new UserManager($bdd);
+// we get the user id on the table booksList
   $bookUserId = $book->getUserId();
+
+// we get the id of the table usersList
   $userId=$userManager->getUserId($bookUserId);
+
+// we get the name and the surname of the user
   $userName=$userId->getName();
   $userSurname = $userId->getSurname();
 
+// we show a message with user data
   $message = 'Lent by '.$userName.' '.$userSurname.'<br> Modify status :';
  }
 }
 
+// if the $_POST is set
+
 if(isset($_POST['available'])){
-  // we show the account selected
+  // we show the book selected
     $book = $manager->getOneBook($_POST['id']);
 
   // we get the previous status
@@ -58,13 +73,9 @@ if(isset($_POST['available'])){
         $update = $manager->updateStatus($book);
         $message = 'This book is available now';
     }
-
 }
 
-//
-// if(isset($_POST['id'])){
-//   var_dump($_POST['id']);
-    // we show the account selected
+
 
 
 

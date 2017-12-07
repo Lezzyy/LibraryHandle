@@ -30,49 +30,47 @@ class User {
 
 // getters
 
-public function getIdUser(){
-  return $this ->idUser;
-}
+  public function getIdUser(){
+    return $this ->idUser;
+  }
 
-public function getName(){
-  return $this ->name;
-}
+  public function getName(){
+    return $this ->name;
+  }
 
-public function getSurname(){
-  return $this ->surname;
-}
+  public function getSurname(){
+    return $this ->surname;
+  }
 
-public function getEmail(){
-  return $this ->email;
-}
+  public function getEmail(){
+    return $this ->email;
+  }
 
-public function getUsernumber(){
-  return $this->userNumber;
-}
+  public function getUsernumber(){
+    return $this->userNumber;
+  }
 
 // setters
 
-public function setIdUser(int $idUser){
-$this->idUser = $idUser;
-}
+  public function setIdUser(int $idUser){
+  $this->idUser = $idUser;
+  }
 
-public function setName($name){
-$this->name = $name;
-}
+  public function setName($name){
+  $this->name = $name;
+  }
 
-public function setSurname($surname){
-$this->surname = $surname;
-}
+  public function setSurname($surname){
+  $this->surname = $surname;
+  }
 
-public function setEmail($email){
-$this->email = $email;
-}
+  public function setEmail($email){
+  $this->email = $email;
+  }
 
-public function setUsernumber(int $userNumber){
-  $this->userNumber = $userNumber;
-}
-
-
+  public function setUsernumber(int $userNumber){
+    $this->userNumber = $userNumber;
+  }
 
 }
 

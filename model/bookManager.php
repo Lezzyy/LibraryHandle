@@ -1,5 +1,7 @@
 <?php
 
+// we create a book manager
+
 class BookManager {
   private $db;
 
@@ -22,27 +24,27 @@ class BookManager {
 
 // request to get all books
 
-public function getAllBooks(){
+  public function getAllBooks(){
 
-  $response=$this->db->query('SELECT * FROM booksList');
-  $books=$response->fetchAll(PDO::FETCH_ASSOC);
-  foreach ($books as $key => $value) {
-    $books[$key]= new Book($value);
+    $response=$this->db->query('SELECT * FROM booksList');
+    $books=$response->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($books as $key => $value) {
+      $books[$key]= new Book($value);
+    }
+    return $books;
   }
-  return $books;
-}
 
 // request to get one book
 
-public function getOneBook($id){
-  $response=$this->db->prepare('SELECT * FROM booksList WHERE id=:id');
-  $response->execute(array(
-    'id'=> $id
-  ));
-  $book=$response->fetch(PDO::FETCH_ASSOC);
-  $book = new Book($book);
-  return $book;
-}
+  public function getOneBook($id){
+    $response=$this->db->prepare('SELECT * FROM booksList WHERE id=:id');
+    $response->execute(array(
+      'id'=> $id
+    ));
+    $book=$response->fetch(PDO::FETCH_ASSOC);
+    $book = new Book($book);
+    return $book;
+  }
 
 
 
@@ -76,27 +78,25 @@ public function getCategory($category){
 
 // request to join user Id in the two Tables
 
-function findUserid($getUserId){
-    $response = $this->db->prepare('SELECT * FROM booksList b INNER JOIN usersList u ON u.idUser = b.userId and u.idUser = ?');
-    $response->execute(array($getUserId));
-    $userId=$response->fetch(PDO::FETCH_ASSOC);
-    $userId = new Book($userId);
-    return $userId;
-}
+  function findUserid($getUserId){
+      $response = $this->db->prepare('SELECT * FROM booksList b INNER JOIN usersList u ON u.idUser = b.userId and u.idUser = ?');
+      $response->execute(array($getUserId));
+      $userId=$response->fetch(PDO::FETCH_ASSOC);
+      $userId = new Book($userId);
+      return $userId;
+  }
 
 
 
 // request to update the status and user id when the status is modify
-public function updateStatus($status){
-  $response=$this->db->prepare('UPDATE booksList SET status=:status, userId=:userId WHERE id=:id');
-  $response->bindValue(':status', $status->getStatus());
-  $response->bindValue(':userId', $status->getUserId());
-  $response->bindValue(':id', $status->getId());
-  $response->execute();
-  return ('$response');
-}
-
-
+  public function updateStatus($status){
+    $response=$this->db->prepare('UPDATE booksList SET status=:status, userId=:userId WHERE id=:id');
+    $response->bindValue(':status', $status->getStatus());
+    $response->bindValue(':userId', $status->getUserId());
+    $response->bindValue(':id', $status->getId());
+    $response->execute();
+    return ('$response');
+  }
 
 }
 

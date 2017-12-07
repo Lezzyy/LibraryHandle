@@ -10,10 +10,10 @@
 
       <form class="d-flex flex-column justify-content-center" action="../controllers/newBook.php" method="post">
         <p class="text-center"><?php echo $error; ?></p>
-        <input type="text" name='title' class="form-control" value="" placeholder="Title"><br>
-        <input type="text" name='author' class="form-control" value="" placeholder="Author"><br>
-        <textarea name="abstract" rows="5" cols="10"></textarea>
-        <input type="text" name='releaseDate' class="form-control" value="" placeholder="Published year (ex : 2017)"><br>
+        <input type="text" name='title' class="form-control" value="" placeholder="Title" required="required"><br>
+        <input type="text" name='author' class="form-control" value="" placeholder="Author" required="required"><br>
+        <textarea name="abstract" rows="5" cols="10" required="required"></textarea>
+        <input type="text" name='releaseDate' class="form-control" value="" placeholder="Published year (ex : 2017)" required="required"><br>
 
         <select name="category">
           <?php foreach (Book::category as $key => $value): ?>
