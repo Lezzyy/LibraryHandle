@@ -31,9 +31,9 @@
         <p class="card-text">Release Date : <?php echo $book->getReleasedate(); ?></p>
         <?php
         if($book->getStatus() == 1){
-          echo "<p class='card-text available'>Statut : Available</p>";
+          echo "<p class='card-text available'>Status : Available</p>";
         } else {
-          echo "<p class='card-text lent'>Statut : Lent</p>";
+          echo "<p class='card-text lent'>Status : Lent</p>";
         } ?>
         </p>
         <p class="card-text" name="category">Category : <?php echo $book->getCategory(); ?></p>

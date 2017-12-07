@@ -20,20 +20,22 @@ if(isset($_POST['id'])){
   $warn = 'This book is already lent';
 
 // if the previous status is different to the new, we show an ok message
-} if ($previousStatus !=  $_POST['lent']){
+  }
+  if ($previousStatus !=  $_POST['lent']){
   $warn = 'This book is available to be lent';
-}
-// else{
-//   echo 'no book selected';
-//   }
+  }
 }
 
 $userManager = new UserManager($bdd);
 
+// if the input is set
   if (isset($_POST['userNumber'])){
+// we securise the data enter by the user
   $number=htmlspecialchars($_POST['userNumber']);
+
+// we get the user number register in the db
   $userNumber = $userManager->getUserNumber($number);
-  // var_dump($userNumber);
+
 
   // with the user number we could get the user id
   $userId=$userNumber->getIdUser();
@@ -47,7 +49,7 @@ $userManager = new UserManager($bdd);
 // we update the book with the new status and the new user id
   $update = $manager->updateStatus($book);
 
-
+// we go back on the book's page
 header("Location: single.php?id=".$book->getId()."");
 
 }
