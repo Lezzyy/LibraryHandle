@@ -138,6 +138,7 @@ textarea {
       color: white;
       margin-right: 15px;
       float:none;
+      margin-bottom: 20px;
     }
 
   .btn-custom:hover {
@@ -220,11 +221,56 @@ float: none;
 }
 
 .message{
+  color: #FF8606;
   margin-bottom: 10px;
   line-height: 30px;
 }
 
 /*end single*/
+
+/*lent form start*/
+
+.lentForm h2{
+  font-size: x-large;
+}
+
+/*end lent form*/
+
+/*media queries*/
+
+/*single page start*/
+
+@media all and (max-device-width: 480px)
+
+{
+.single h2, h4{
+  font-size: large;
+    /*margin-bottom: 1px;*/
+}
+
+.single p{
+  font-size: 0.6 rem;
+}
+
+.single {
+  line-height: 1.2;
+
+}
+
+/*end single page*/
+
+/*index cat start*/
+.cat h2, h4{
+    font-size: large;
+}
+
+.card{
+  margin-left: 30px;
+}
+/*end index cat*/
+
+
+}
 
 /* ##################################################################### */
 /* ##########################   SMARTPHONE   ########################### */
